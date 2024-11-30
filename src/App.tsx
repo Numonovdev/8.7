@@ -75,17 +75,20 @@ const App = () => {
   
   return (
     <div className="w-full px-10 md:w-1/2">
-      <div className="p-4 flex flex-col items-center bg-white/90 text-blue-950 rounded-lg shadow-lg ">
-        <div className="flex justify-between gap-6 items-center mb-4">
+      <div className="p-4 flex flex-col bg-white/90 text-blue-950 rounded-lg shadow-lg ">
+        <div className="flex justify-between w-full gap-6 items-center mb-4">
+          <h2 className="text-xl font-black">{months[year.getMonth()]} {year.getFullYear()}</h2>
+          <div className="flex gap-5">
+
           <GoChevronLeft
             className="text-xl text-white bg-blue-950 rounded-full font-black"
             onClick={() => changeMonth(-1)}
-          />
-          <h2 className="text-xl font-black">{months[year.getMonth()]} {year.getFullYear()}</h2>
+            />
           <GoChevronRight
             className="text-xl bg-blue-950 text-white rounded-full"
             onClick={() => changeMonth(1)}
-          />
+            />
+            </div>
         </div>
 
         <div className="grid grid-cols-5 w-full md:grid-cols-7 gap-2 text-center">
@@ -109,7 +112,7 @@ const App = () => {
         </div>
         <button
           onClick={openModal}
-          className="bg-white/50 hover:bg-white/80 w-full duration-300 text-blue-950 rounded-md px-5 mt-3 font-bold py-2 sm:w-1/2"
+          className="bg-black hover:bg-black/80 w-full duration-300 text-white rounded-md px-5 mt-3 font-bold py-2 sm:w-1/2"
         >
           Rejalashtirish
         </button>
